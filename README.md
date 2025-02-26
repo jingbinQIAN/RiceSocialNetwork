@@ -7,6 +7,8 @@
 **Frontend:** https://comp531finalproject.surge.sh/ <br>
 **Backend:** https://comp531finalwebproject-c7f61df603db.herokuapp.com/
 
+(Service has been stopped to prevent additional charge)
+
 ---
 
 I have copied all the jsonplaceholder data to my database.
