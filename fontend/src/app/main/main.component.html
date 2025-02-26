@@ -1,0 +1,81 @@
+<div class="main-view">
+    <div class="content">
+        <h2>Welcome, {{ currentuser }}</h2>
+        <img [src]="profilePicture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+        <h4>Status: {{ statusHeadline }}</h4>
+        <div>
+            <input type="text" [(ngModel)]="statusInput" placeholder="Update your status...">
+            <button (click)="updateStatusHeadline()">Update Status</button>
+        </div>
+        <button (click)="goToProfile()">Go to Profile</button>
+        <button style="background-color: red;" (click)="logout()">Log Out</button>
+        <h3>Add New Article</h3>
+        <div contenteditable="true" class="editable-div" #contentDiv></div>
+        <!-- Image Upload Input -->
+        <input type="file" id="fileInput" (change)="onImageSelected($event)" accept="image/*">
+        <button (click)="addArticle(contentDiv)">Post</button>
+        <button (click)="cancelArticle(contentDiv)">Cancel</button>
+        <h3>Articles</h3>
+        <input type="text" [(ngModel)]="searchText" placeholder="Search article's body content or author's name">
+        <button (click)="filterArticles()">Search</button>
+        <!-- Articles List -->
+        <div *ngFor="let post of filteredPosts" class="post">
+            <h4>{{ post.title }}</h4>
+            <p><strong>Author: </strong> {{ post.author }}</p>  <!-- Replace with actual author name if available -->
+             <!-- Show Post Image if Present -->
+            <img *ngIf="post.image" [src]="post.image" alt="Post Image" style="max-width: 100%; height: auto;">
+
+            <p>{{ post.text }}</p>
+            <p>{{ post.date | date:'short' }}</p>
+            <button (click)="editArticle(post.id)">Edit</button>
+            <button (click)="commentOnArticle(post.id)">Comment</button>
+
+            <!-- Toggle Comments -->
+            <button (click)="post.showComments = !post.showComments">
+                {{ post.showComments ? 'Hide Comments' : 'Show Comments' }}
+            </button>
+
+            <!-- Comments Section -->
+            <div *ngIf="post.showComments">
+                <h4>Comments:</h4>
+                <ul>
+                    <li *ngFor="let comment of post.comments">
+                        <strong>{{ comment.author }}:</strong> {{ comment.text }}
+                    
+                        <input 
+                        *ngIf="comment.isEditing" 
+                        [(ngModel)]="comment.editedText" 
+                        placeholder="Edit your comment" 
+                    />
+        
+                    <!-- Edit Button -->
+                    <button *ngIf="!comment.isEditing" (click)="editComment(post.id, comment)">Edit</button>
+                    
+                    <!-- Save Button -->
+                    <button *ngIf="comment.isEditing" (click)="saveComment(post.id, comment)">Save</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+            <span>Page {{ currentPage }}</span>
+            <button (click)="changePage(currentPage + 1)" [disabled]="currentPage * articlesPerPage >= posts.length">Next</button>
+        </div>
+    </div>
+    
+    <div class="sidebar">
+        <h3>Followers</h3>
+        <div *ngFor="let follower of followers; let i = index">
+            <img [src]="follower.avatar" [style.width]="follower.width" style="width: 30%;"  alt="{{ follower.username }}'s image">
+            <p>Name: {{ follower.username }} - Headline: {{ follower.headline }}</p>
+            <button style="background-color: rgb(209, 101, 101);" (click)="unfollow(i)">Unfollow</button>
+            
+        </div>
+        <input #followerInput type="text" placeholder="Add new follower (please input name)">
+        <button (click)="addFollower(followerInput.value)">Add Follower</button>
+    </div>
+</div>

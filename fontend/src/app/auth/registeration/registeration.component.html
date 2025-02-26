@@ -1,0 +1,48 @@
+<form (submit)="onRegister()" #registrationForm="ngForm">
+    <p style="text-align: center; font-weight: bold; font-size: 20px;">Register</p>
+    <div class="form-group">
+      <label for="accountName">Account Name</label>
+      <input class="put" [(ngModel)]="username" type="text" name="username" id="username" placeholder="Enter your user name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="displayName">Display Name</label>
+      <input class="put" [(ngModel)]="displayName" type="text" name="displayName" id="displayName" placeholder="Optional" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="put" [(ngModel)]="email" name="email" id="email" placeholder="xxx@xxx.xxx" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input class="put" [(ngModel)]="phone" type="text" id="phone" name="phone" placeholder="XXX-XXX-XXXX" required />
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input class="put" [(ngModel)]="dob" type="date" id="dob" name="dob" required />
+    </div>
+
+    <div class="form-group">
+      <label for="zipcode">Zipcode</label>
+      <input class="put" [(ngModel)]="zipcode" type="text" id="zipcode" name="zipcode" required />
+    </div>
+
+    <div class="form-group">
+      <label for="newpassword">Password</label>
+      <input class="put" [(ngModel)]="newpassword" type="password" id="newpassword" name="newpassword" required />
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input class="put" [(ngModel)]="confirmPassword" type="password" id="confirmPassword" name="confirmPassword" required />
+    </div>
+
+    <input type="hidden" id="timestamp" name="timestamp" />
+    <div class="form-group">
+    <button type="submit">Submit</button>
+    <button type="button" (click)="clearForm()">Clear</button>
+    </div>
+  </form>

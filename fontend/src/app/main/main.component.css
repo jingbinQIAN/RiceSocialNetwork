@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.main-view {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content, .sidebar {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.content {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    position: sticky;  /* Keep the sidebar fixed while scrolling */
+    top: 20px;         /* Space from the top of the viewport */
+    height: calc(100vh - 40px); /* Sidebar height is viewport height minus top space */
+    overflow: auto;    /* Enable scrollbar if the content overflows */
+    box-sizing: border-box; /* Ensure padding is included in the height calculation */
+}
+
+img.profile-pic {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-update, .search-articles, .add-article, .add-follower {
+    margin-bottom: 20px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.post, .follower {
+    background: #fafafa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.editable-div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

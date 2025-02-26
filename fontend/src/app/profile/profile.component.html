@@ -1,0 +1,86 @@
+<div class="profile-view">
+    
+    
+    <!-- Profile Picture and File Input inside the Form -->
+    <form>
+        <p style="text-align: center; font-weight: bold; font-size: 20px;">Profile</p>
+      <div>
+        <img
+      [src]="previewProfilePictureUrl || profilePicture"
+      alt="Profile Picture"
+      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"
+    />
+      <div style="margin-top: 10px;">
+        <input type="file" (change)="onProfilePictureSelected($event)" accept="image/*" />
+      </div>
+      <div *ngIf="uploadMessage" class="upload-status" style="margin-top: 10px; color: green;">
+        {{ uploadMessage }}
+      </div>
+    </div>
+    
+    
+      <!-- Username -->
+      <div>
+        <label for="username">Username: </label>
+        <span>{{ currentuser }}</span> <!-- Label showing current username -->
+      </div>
+
+      <!-- Date of Birth -->
+      <div>
+        <label for="dob">Date of Birth: </label>
+        <span>{{ currentDOB }}</span> <!-- Display current date of birth -->
+      </div>
+    
+      <!-- Email -->
+      <div>
+        <label for="email">Email: </label>
+        <span>{{ currentEmail }}</span> <!-- Label showing current email -->
+        <input type="email" id="email" [(ngModel)]="updatedEmail" name="email" />
+      </div>
+    
+      <!-- Phone Number -->
+      <div>
+        <label for="phone">Phone Number: </label>
+        <span>{{ currentPhone }}</span> <!-- Label showing current phone number -->
+        <input type="text" id="phone" [(ngModel)]="updatedPhone" name="phone" placeholder="xxx-xxx-xxxx" />
+      </div>
+    
+      <!-- Zipcode -->
+      <div>
+        <label for="zipcode">Zipcode: </label>
+        <span>{{ currentZipcode }}</span> <!-- Label showing current zipcode -->
+        <input type="text" id="zipcode" [(ngModel)]="updatedZipcode" name="zipcode" />
+      </div>
+    
+      <!-- Password -->
+      <div>
+        <label for="password">Password: </label>
+        <span>{{ getPasswordMask() }}</span> <!-- Masked password display -->
+        <input type="password" id="password" [(ngModel)]="updatedPassword" name="password" placeholder="Enter new password" />
+      </div>
+    
+      <!-- Buttons -->
+      <div>
+        <button type="button" (click)="saveProfile()">Save Changes</button>
+        <button type="button" (click)="goToMain()">Go Back to Main</button>
+      </div>
+    </form>
+
+    <div *ngIf="showLinkButton()">
+      <h3>Link a Local Account</h3>
+      <label for="username" style="color: black;">Username:</label>
+      <input type="text" id="username" #username>
+      
+      <label for="password" style="color: black;">Password:</label>
+      <input type="password" id="password" #password>
+      
+      <button (click)="linkAccount(username.value, password.value)">Link Account</button>
+    </div>
+    
+    <div *ngIf="showUnlinkButton()">
+      <h3>Unlink Local Account</h3>
+      <button (click)="unlinkAccount()">Unlink Account</button>
+    </div>
+    
+  </div>
+  

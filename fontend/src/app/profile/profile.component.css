@@ -1,0 +1,125 @@
+.profile-view {
+    width: 460px;
+    height: auto;
+    background-color: rgba(251, 251, 251, 0.8);
+    border: 1px solid #fff;
+    margin-top: 30px;
+    border-radius: 4px;
+    margin: 30px auto; /* Centers the container horizontally */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-view h2 {
+    text-align: center;
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    background-color: #08548f;
+    border-radius: 4px;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    text-align: left; /* Align text and form items to the left */
+}
+
+.profile-view div {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.profile-view label {
+    display: block; /* Make labels block elements */
+    width: 120px; /* Fixed width for labels */
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    left: -90px;
+}
+
+.profile-view span{
+    width: calc(100% - 140px); /* Same width calculation for span and input */
+    padding: 8px;
+    background-color: #f0f0f0; /* Background for span */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px; /* Space below labels */
+}
+
+.profile-view input[type="text"],
+.profile-view input[type="email"],
+.profile-view input[type="password"] {
+    width: calc(100% - 140px); /* Same width calculation for span and input */
+    padding: 8px;
+    background-color: #ffffff; /* Background for span */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px; /* Space below labels */
+}
+.profile-view input[type="file"] {
+    margin-top: 10px;
+    margin-left: 80px;
+}
+
+.profile-view img {
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    width: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-view button {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.profile-view button:hover {
+    background-color: #0056b3;
+}
+
+.profile-view input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+.profile-view .profile-pic {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-view .password-row {
+    display: flex;
+    align-items: center;
+}
+
+.profile-view .password-row label {
+    flex: 0 0 120px; /* Fixed width for labels in password row */
+}
+
+.profile-view .password-row input {
+    flex: 1;
+}
+
+.profile-view .password-row .checkbox {
+    margin-left: 10px;
+}
+
+
