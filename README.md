@@ -1,6 +1,5 @@
-## COMP531 Final Web Project
+## Rice University COMP531 Final Web Project - Rice Social Network
 
-**netid:** jq12
 
 **Test Username:** "Bret"  
 **Test Password:** "Kulas Light"
