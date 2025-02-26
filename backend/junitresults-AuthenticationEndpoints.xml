@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="3" time="1.166">
+ <testsuite name="Authentication Endpoints" timestamp="2024-11-17T15:45:35" hostname="localhost" time="1.166" errors="0" tests="3" skipped="0" disabled="0" failures="0">
+  <testcase classname="Authentication Endpoints" name="POST /login (should log in a user)" time="0.249" />
+  <testcase classname="Authentication Endpoints" name="POST /register (should register a new user)" time="0.235" />
+  <testcase classname="Authentication Endpoints" name="PUT /logout (should log out a user)" time="0.68" />
+ </testsuite>
+</testsuites>

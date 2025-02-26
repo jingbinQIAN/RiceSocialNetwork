@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="2" time="0.598">
+ <testsuite name="Profile Endpoints" timestamp="2024-11-17T15:45:38" hostname="localhost" time="0.598" errors="0" tests="2" skipped="0" disabled="0" failures="0">
+  <testcase classname="Profile Endpoints" name="PUT /headline (should update the headline for the logged-in user)" time="0.313" />
+  <testcase classname="Profile Endpoints" name="GET /headline (should return the headline for the logged-in user)" time="0.285" />
+ </testsuite>
+</testsuites>
